@@ -7,11 +7,11 @@ import pandas as pan
 
 
 def init_browser():
-    executable_path = {"executable_path" : "/Users/MPatxot/.wdm/drivers/chromedriver/78.0.3904.97/mac64/chromedriver"}
+    # Set Executable Path & Initialize Chrome Browser\
+    executable_path = {"executable_path" : "./chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
-
-data_web = {}
-images_urls = []
+    data_web = {}
+    images_urls = []
 
 def scpeNews():    
     browser_news = init_browser()
