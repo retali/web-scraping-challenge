@@ -1,4 +1,4 @@
-from splinter import Browser
+from splinter, import, Browser
 import requests
 from bs4 import BeautifulSoup as bsp
 from pprint import pprint
