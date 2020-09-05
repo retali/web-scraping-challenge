@@ -13,7 +13,7 @@ def init_browser():
 data_web = {}
 images_urls = []
 
-def scrapeNews():    
+def scpeNews():    
     browser_news = init_browser()
     urlnews = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser_news.visit(urlnews)
@@ -28,7 +28,7 @@ def scrapeNews():
     browser_news.quit()
     return data_web
     
-def scrapeImage():
+def scpeImage():
     browser_image = init_browser() 
     url_image = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser_image.visit(url_image)
@@ -41,7 +41,7 @@ def scrapeImage():
     return data_web
     
     
-def scrapeFacts():
+def scpeFacts():
     browser_facts = init_browser()
     url_facts = 'https://space-facts.com/mars/'
     browser_facts.visit(url_facts)
@@ -53,7 +53,7 @@ def scrapeFacts():
     browser_facts.quit()
     return data_web
         
-def scrape_Cerberus():
+def scpe_Cerberus():
     browser_Cerberus = init_browser()
     url_Cerberus = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
     browser_Cerberus.visit(url_Cerberus)
@@ -64,7 +64,7 @@ def scrape_Cerberus():
     browser_Cerberus.quit()
     return data_web
     
-def scrape_Schiaparelli(): 
+def scpe_Schiaparelli(): 
     browser_Schiaparelli = init_browser()
     url_Schiaparelli = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced'
     browser_Schiaparelli.visit(url_Schiaparelli)
@@ -75,7 +75,7 @@ def scrape_Schiaparelli():
     browser.quit()
     return data_web
     
-def scrape_yrtisMajor():        
+def scpe_yrtisMajor():        
     browser_yrtisMajor = init_browser()
     url_yrtisMajor = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
     browser_yrtisMajor.visit(url_yrtisMajor)
@@ -86,7 +86,7 @@ def scrape_yrtisMajor():
     browser.quit()
     return data_web
         
-def scrape_VallesMarineris():     
+def scpe_VallesMarineris():     
     browser_VallesMarineris = init_browser()
     url_VallesMarineris = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
     browser_VallesMarineris.visit(url_VallesMarineris)
