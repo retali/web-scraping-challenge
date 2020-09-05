@@ -103,6 +103,6 @@ def scrape_VallesMarineris():
     html_VallesMarineris=browser_VallesMarineris.html
     soup_VallesMarineris = bsp(html_VallesMarineris, 'html.parser')
     url_VallesMarineris= (soup_VallesMarineris.find_all('div', class_='downloads')[0].li.a.get('href'))
-    images_urls .append([{"title": "Valles Marineris Hemisphere", "img_url": url_VallesMarineris}])
+    images_urls.append([{"title": "Valles Marineris Hemisphere", "img_url": url_VallesMarineris}])
     browser_VallesMarineris.quit()
     return data_web
