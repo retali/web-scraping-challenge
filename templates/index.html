@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MISSION TO MARS - HOMEWORK 12</title>
+  <title>MISSION TO MARS</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
     img {
@@ -36,7 +36,7 @@
         <b><h3 class="heading">{{mission_to_mars.latestNewsDate}}</h3></b>
         <b><h3 class="heading">{{mission_to_mars.latestNewsTitle}}</h3></b>
         <h4>{{mission_to_mars.latestNewsParagraph}}</h4>
-    
+    </div>
     <div class="container">
       <div class="row">
         <div class ="col-md-12">
@@ -48,6 +48,29 @@
         <div class="col-md-1">
         </div>
         
+        </div>
+      </div>
+      
+      
+          <div class="container">
+      <div class="row">
+        <div class ="col-md-12">
+        </div>
+        <div class="col-md-5">
+          <h2 class="heading">Featured Mars Image</h2>
+          <img src="{{mission_to_mars.featImage}}">
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5" style="padding-top: 20px;">
+            
+            <div class="row" style="padding-left: 16px;">
+              <h3 class="header" > Mars Facts</h3>
+                <table>
+                  {{mission_to_mars.mars_facts}}
+                </table>
+            </div>
+        </div>
         </div>
       </div>
     <div class="container">
