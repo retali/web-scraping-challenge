@@ -89,7 +89,8 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 * Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
-- - -
+# Screenshots of final application
+![result](Images/result.png)
 
 ## Step 3 - Submission
 
@@ -112,3 +113,6 @@ To submit your work to BootCampSpot, create a new GitHub repository and upload t
 ### Copyright
 
 Trilogy Education Services © 2019. All Rights Reserved.
+
+
+
