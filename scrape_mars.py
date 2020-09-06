@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup as bsp
 from pprint import pprint
 import pandas as pan
 
-
-
 def init_browser():
     # Set Executable Path & Initialize Chrome Browser\
     executable_path = {"executable_path" : "./chromedriver"}
