@@ -1,4 +1,7 @@
-from flask import Flask, render_template, redirect, request 
+from flask import Flask 
+from flask import render_template
+from flask import redirect
+from flask import request
 from flask_pymongo import PyMongo
 import scrape_mars
 from pymongo import MongoClient
@@ -32,7 +35,7 @@ def scrape():
     data_web = scrape_mars.scpe_VallesMarineris()
     
     # Update Database
-    scrape_mars.update({}, data_web, upsert=True)
+    mission_to_mars.update({}, data_web, upsert=True)
     
     # Back to home page
     return redirect("/", code=302)
