@@ -6,10 +6,12 @@ import pandas as pan
 
 def init_browser():
     # Set Executable Path & Initialize Chrome Browser\
-    executable_path = {"executable_path" : "./chromedriver"}
-    return Browser("chrome", **executable_path, headless=False)
-    data_web = {}
-    images_urls = []
+     executable_path = {'executable_path': 'chromedriver.exe'}
+     browser = Browser('chrome', **executable_path, headless=False)
+     return browser
+
+data_web =  {}
+images_urls = []
 
 def scpeNews():    
     browser_news = init_browser()
@@ -20,9 +22,9 @@ def scpeNews():
     latestNewsParagraph = (soup_news.find_all('div', class_='article_teaser_body'))[0].get_text()
     latestNewsTitle = (soup_news.find_all('div', class_='content_title'))[0].get_text()
     latestNewsDate = (soup_news.find_all('div', class_="list_date"))[0].get_text()    
-    data_web['latestNewsParagraph'] = latestNewsParagraph
-    data_web['latestNewsTitle'] = latestNewsTitle
-    data_web['latestNewsDate'] = latestNewsDate
+    data_web["latestNewsParagraph"] = latestNewsParagraph
+    data_web["latestNewsTitle"] = latestNewsTitle
+    data_web["latestNewsDate"] = latestNewsDate
     browser_news.quit()
     return data_web
     
@@ -59,6 +61,7 @@ def scpe_Cerberus():
     soup_Cerberus = bsp(html_Cerberus, 'html.parser')
     url_Cerberus = (soup_Cerberus.find_all('div', class_='downloads')[0].li.a.get('href'))
     images_urls.append([{"title": "Cerberus Hemisphere", "img_url": url_Cerberus}])
+    data_web['images_urls']=images_urls
     browser_Cerberus.quit()
     return data_web
     
@@ -70,7 +73,8 @@ def scpe_Schiaparelli():
     soup_Schiaparelli = bsp(html_Schiaparelli, 'html.parser')
     url_Schiaparelli = (soup_Schiaparelli.find_all('div', class_='downloads')[0].li.a.get('href'))
     images_urls.append([{"title": "Schiaparelli Hemisphere", "img_url": url_Schiaparelli}])
-    browser.quit()
+    data_web['images_urls']=images_urls
+    browser_Schiaparelli.quit()
     return data_web
     
 def scpe_yrtisMajor():        
@@ -81,7 +85,8 @@ def scpe_yrtisMajor():
     soup_yrtisMajor = bsp(html_yrtisMajor, 'html.parser')
     url_yrtisMajor = (soup_yrtisMajor.find_all('div', class_='downloads')[0].li.a.get('href'))
     images_urls.append([{"title": "Syrtis Major Hemisphere", "img_url": url_yrtisMajor}])
-    browser.quit()
+    data_web['images_urls']=images_urls
+    browser_yrtisMajor.quit()
     return data_web
         
 def scpe_VallesMarineris():     
@@ -92,5 +97,6 @@ def scpe_VallesMarineris():
     soup_VallesMarineris = bsp(html_VallesMarineris, 'html.parser')
     url_VallesMarineris= (soup_VallesMarineris.find_all('div', class_='downloads')[0].li.a.get('href'))
     images_urls.append([{"title": "Valles Marineris Hemisphere", "img_url": url_VallesMarineris}])
+    data_web['images_urls']=images_urls
     browser_VallesMarineris.quit()
     return data_web
