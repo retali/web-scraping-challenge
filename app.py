@@ -18,21 +18,21 @@ def index():
     mission_to_mars = mongo.db.mission_to_mars.find_one()
     return render_template("index.html", mission_to_mars = mission_to_mars)
     
-@app.route("/")
+@app.route("/scrape")
 def scrape():
 
     # Run the scrape function
     mission_to_mars = mongo.db.mission_to_mars
-    data_web = scrape_mars.scrapeNews()
-    data_web = scrape_mars.scrapeImage()
-    data_web = scrape_mars.scrapeFacts()
-    data_web = scrape_mars.scrape_Cerberus()
-    data_web = scrape_mars.scrape_Schiaparelli()
-    data_web = scrape_mars.scrape_yrtisMajor()
-    data_web = scrape_mars.scrape_VallesMarineris()
+    data_web = scrape_mars.scpeNews()
+    data_web = scrape_mars.scpeImage()
+    data_web = scrape_mars.scpeFacts()
+    data_web = scrape_mars.scpe_Cerberus()
+    data_web = scrape_mars.scpe_Schiaparelli()
+    data_web = scrape_mars.scpe_yrtisMajor()
+    data_web = scrape_mars.scpe_VallesMarineris()
     
     # Update Database
-    mars.update({}, data_web, upsert=True)
+    scrape_mars.update({}, data_web, upsert=True)
     
     # Back to home page
     return redirect("/", code=302)
