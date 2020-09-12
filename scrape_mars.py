@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bsp
 from pprint import pprint
 import pandas as pan
+from markupsafe import Markup, escape
 
 def init_browser():
     # Set Executable Path & Initialize Chrome Browser\
@@ -42,16 +43,12 @@ def scpeImage():
     
     
 def scpeFacts():
-    browser_facts = init_browser()
-    url_facts = 'https://space-facts.com/mars/'
-    browser_facts.visit(url_facts)
-    html_facts=browser_facts.html
-    soup = bsp(html_facts, 'html.parser')
-    t_facts = ((pan.read_html(url_facts))[0]).rename(columns={0: "Attribute", 1: "Value"}).set_index(['Attribute'])
-    table_facts = (t_facts.to_html()).replace('\n', '')
-    data_web['mars_facts'] = table_facts
-    browser_facts.quit()
+    df = pan.read_html("https://space-facts.com/mars/")[0]
+    df.columns=["Description", "Value"]
+    df.set_index("Description", inplace=True)
+    data_web['mars_facts'] = df.to_html(classes="table table-striped")    
     return data_web
+
         
 def scpe_Cerberus():
     browser_Cerberus = init_browser()
