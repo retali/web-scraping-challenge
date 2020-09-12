@@ -18,11 +18,12 @@ def scpeNews():
     browser_news = init_browser()
     urlnews = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser_news.visit(urlnews)
+    browser_news.is_element_present_by_css("ul.item_list li.slide", wait_time=0.5)
     resulhtml = browser_news.html
     soup_news = bsp(resulhtml, 'html.parser')
     latestNewsParagraph = (soup_news.find_all('div', class_='article_teaser_body'))[0].get_text()
     latestNewsTitle = (soup_news.find_all('div', class_='content_title'))[0].get_text()
-    latestNewsDate = (soup_news.find_all('div', class_="list_date"))[0].get_text()    
+    latestNewsDate = (soup_news.find_all('div', class_="list_date"))[0].get_text()   
     data_web["latestNewsParagraph"] = latestNewsParagraph
     data_web["latestNewsTitle"] = latestNewsTitle
     data_web["latestNewsDate"] = latestNewsDate
